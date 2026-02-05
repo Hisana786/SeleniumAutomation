@@ -28,6 +28,6 @@ public class LoginPage {
 	
 	public void clickOnLoginButton()
 	{
-		loginbutton.click();//.
+		loginbutton.click();
 	}
 }
