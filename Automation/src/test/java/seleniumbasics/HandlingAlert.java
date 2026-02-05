@@ -36,8 +36,8 @@ public class HandlingAlert extends Base{
 	public static void main(String[] args) {
 		HandlingAlert alert = new HandlingAlert();
 		alert.browserInitialization();
-        //alert.verifyallerts();
-        //alert.verifyconfirm();
+        alert.verifyallerts();
+        alert.verifyconfirm();
         alert.verifyprompt();
 	}
 
