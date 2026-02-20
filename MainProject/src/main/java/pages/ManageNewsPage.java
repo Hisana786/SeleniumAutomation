@@ -11,53 +11,64 @@ public class ManageNewsPage {
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		}
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")WebElement info;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']")WebElement newsbutton;
+	}
+	
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add']")WebElement newbutton;
 	@FindBy(xpath="//textarea[@id='news']")WebElement news;
 	@FindBy(xpath="//button[@type='submit']")WebElement save;
+	
 	@FindBy(xpath="//a[@href='javascript:void(0)']")WebElement searchbutton;
 	@FindBy(xpath="//input[@type='text']")WebElement text;
 	@FindBy(xpath="//button[@type='submit']")WebElement search;
+	
 	@FindBy(xpath="//i[@class='ace-icon fa fa-sync-alt']")WebElement reset;
+	@FindBy(xpath="//h1[@class='m-0 text-dark' and text()='Manage News']")WebElement managenewstext;
+
 	
-	public void clickOnMoreInfo()
+	public ManageNewsPage clickOnNewButton()
 	{
-		info.click();
+		newbutton.click();
+		return this;
 	}
 	
-	public void clickOnNewsButton()
-	{
-		newsbutton.click();
-	}
-	
-	public void enterNewsOnNewsField(String newsformat)
+	public ManageNewsPage enterNewsOnNewsField(String newsformat)
 	{
 		news.sendKeys(newsformat);
+		return this;
 	}
 	
-	public void clickOnSaveButton()
+	public ManageNewsPage clickOnSaveButton()
 	{
 		save.click();
+		return this;
 	}
 	
-	public void clickOnSearchButton()
+	public ManageNewsPage clickOnSearchButton()
 	{
 		searchbutton.click();
+		return this;
 	}
 	
-	public void enterNewsonSearchField(String newsformat)
+	public ManageNewsPage enterNewsonSearchField(String newsformat)
 	{
 		text.sendKeys(newsformat);
+		return this;
 	}
 	
-	public void clickOnSubmitButton()
+	public ManageNewsPage clickOnSubmitButton()
 	{
 		search.click();
+		return this;
 	}
 	
-	public void cickOnResetButton()
+	public ManageNewsPage cickOnResetButton()
 	{
 		reset.click();
+		return this;
+	}
+	
+	public boolean isManageNewsDisplayed()
+	{
+		return managenewstext.isDisplayed();
 	}
 }

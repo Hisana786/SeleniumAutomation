@@ -2,14 +2,20 @@ package testscripts;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import main.AutomationCore;
+import automationcore.TextNGBase;
+import constants.Constants;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
-public class ManageNewsTest extends AutomationCore{
+public class ManageNewsTest extends TextNGBase{
+	HomePage home;
+	ManageNewsPage manage;
 	@Test
 	public void verifyUserisAbletoAddNewNews() throws IOException
 	{
@@ -18,15 +24,17 @@ public class ManageNewsTest extends AutomationCore{
 		String newsformat = ExcelUtility.getStringData(0, 0,"ManageNewsPage");
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue);
-		login.enterPasswordOnPasswordField(passwordvalue);
-		login.clickOnSignInButton();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+		home = login.clickOnSignInButton();
 		
-		ManageNewsPage manage = new ManageNewsPage(driver);
-		manage.clickOnMoreInfo();
-		manage.clickOnNewsButton();
-		manage.enterNewsOnNewsField(newsformat);
-		manage.clickOnSaveButton();
+		//HomePage home = new HomePage(driver);
+		manage = home.clickOnManageNews();
+		
+		//ManageNewsPage manage = new ManageNewsPage(driver);
+		manage.clickOnNewButton().enterNewsOnNewsField(newsformat).clickOnSaveButton();
+		
+		boolean managenewsdisplay = manage.isManageNewsDisplayed();
+		Assert.assertTrue(managenewsdisplay, Constants.ADDNEWSERROR);
 	}
 	@Test
 	public void verifyUserisAbletoSearchtheAddedNews() throws IOException
@@ -36,15 +44,17 @@ public class ManageNewsTest extends AutomationCore{
 		String newsformat = ExcelUtility.getStringData(0, 0,"ManageNewsPage");
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue);
-		login.enterPasswordOnPasswordField(passwordvalue);
-		login.clickOnSignInButton();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+		home = login.clickOnSignInButton();
 		
-		ManageNewsPage manage = new ManageNewsPage(driver);
-		manage.clickOnMoreInfo();
-		manage.clickOnSearchButton();
-		manage.enterNewsonSearchField(newsformat);
-		manage.clickOnSubmitButton();
+		//HomePage home = new HomePage(driver);
+		manage = home.clickOnManageNews();
+		
+		//ManageNewsPage manage = new ManageNewsPage(driver);
+		manage.clickOnSearchButton().enterNewsonSearchField(newsformat).clickOnSubmitButton();
+		
+		boolean managenewsdisplay = manage.isManageNewsDisplayed();
+		Assert.assertTrue(managenewsdisplay, Constants.SEARCHNEWSERROR );
 	}
 	@Test
 	public void verifyWhetherUserisAbletoResettheNews() throws IOException
@@ -53,13 +63,17 @@ public class ManageNewsTest extends AutomationCore{
 		String passwordvalue = ExcelUtility.getStringData(0, 1,"LoginPage");
 		
 		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue);
-		login.enterPasswordOnPasswordField(passwordvalue);
-		login.clickOnSignInButton();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
+		home = login.clickOnSignInButton();
 		
-		ManageNewsPage manage = new ManageNewsPage(driver);
-		manage.clickOnMoreInfo();
+		//HomePage home = new HomePage(driver);
+		manage = home.clickOnManageNews();
+		
+		//ManageNewsPage manage = new ManageNewsPage(driver);
 		manage.cickOnResetButton();
+		
+		boolean managenewsdisplay = manage.isManageNewsDisplayed();
+		Assert.assertTrue(managenewsdisplay, Constants.RESETNEWSERROR );
 	}
 
 }

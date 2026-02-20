@@ -8,6 +8,8 @@ package utilities;
 	import org.apache.poi.xssf.usermodel.XSSFSheet;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constants.Constants;
+
 	public class ExcelUtility {
 		static FileInputStream f;
 		static XSSFWorkbook w;
@@ -15,7 +17,7 @@ package utilities;
 			
 			public static String getStringData(int a,int b, String sheet) throws IOException
 			{
-				f = new FileInputStream("C:\\Users\\hp\\OneDrive\\MainProject\\src\\test\\resources\\Testdata.xlsx");
+				f = new FileInputStream(Constants.TESTDATAFILE);
 				w = new XSSFWorkbook(f);
 				s = w.getSheet(sheet);
 				
@@ -25,7 +27,7 @@ package utilities;
 			}
 			public static String getIntegerData(int a,int b, String sheet) throws IOException
 			{	
-				f = new FileInputStream("C:\\Users\\hp\\OneDrive\\MainProject\\src\\test\\resources\\Testdata.xlsx");
+				f = new FileInputStream(Constants.TESTDATAFILE);
 				w = new XSSFWorkbook(f);
 				s = w.getSheet(sheet);
 				
@@ -37,7 +39,7 @@ package utilities;
 		}
 	public static String getFloatData(int a,int b, String sheet)throws IOException
 	{
-		f = new FileInputStream("C:\\Users\\hp\\OneDrive\\MainProject\\src\\test\\resources\\Testdata.xlsx");
+		f = new FileInputStream(Constants.TESTDATAFILE);
 		w = new XSSFWorkbook(f);
 		s = w.getSheet(sheet);
 		
