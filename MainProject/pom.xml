@@ -4,12 +4,6 @@
   <artifactId>MainProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-  <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.34.0</version>
-    <scope>compile</scope>
-</dependency>
   	<dependency>
   		<groupId>com.obsqura</groupId>
   		<artifactId>Automation</artifactId>
@@ -73,5 +67,5 @@
  				</configuration> 
  			</plugin> 
  		</plugins> 
- 	</build
+ 	</build>
 </project>
