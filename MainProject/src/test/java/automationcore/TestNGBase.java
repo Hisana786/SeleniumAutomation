@@ -17,7 +17,7 @@ import org.testng.annotations.Parameters;
 import constants.Constants;
 import utilities.ScreenshotUtility;
 
-public class TextNGBase {
+public class TestNGBase {
 	
 	Properties prop;
 	FileInputStream fs;

@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import automationcore.TextNGBase;
+import automationcore.TestNGBase;
 import constants.Constants;
 import pages.HomePage;
 import pages.LoginPage;
@@ -13,7 +13,7 @@ import pages.ManageAdminPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
-public class ManageAdminTest extends TextNGBase{
+public class ManageAdminTest extends TestNGBase{
 	HomePage home;
 	ManageAdminPage admin;
 	@Test

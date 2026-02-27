@@ -5,13 +5,13 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import automationcore.TextNGBase;
+import automationcore.TestNGBase;
 import constants.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
-public class HomeTest extends TextNGBase{
+public class HomeTest extends TestNGBase{
 	HomePage home;
 	@Test(retryAnalyzer = retry.RetryMechanism.class)
 	public void verifyWhetherUserisAbletoLogoutSuccessfully() throws IOException

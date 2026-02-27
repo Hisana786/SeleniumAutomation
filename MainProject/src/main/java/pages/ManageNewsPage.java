@@ -22,7 +22,7 @@ public class ManageNewsPage {
 	@FindBy(xpath="//button[@type='submit']")WebElement search;
 	
 	@FindBy(xpath="//i[@class='ace-icon fa fa-sync-alt']")WebElement reset;
-	@FindBy(xpath="//h1[@class='m-0 text-dark' and text()='Manage News']")WebElement managenewstext;
+	@FindBy(xpath="//li[text()='Manage News']")WebElement managenewstext;
 
 	
 	public ManageNewsPage clickOnNewButton()

@@ -6,13 +6,13 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import automationcore.TextNGBase;
+import automationcore.TestNGBase;
 import constants.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
-public class LoginTest extends TextNGBase{
+public class LoginTest extends TestNGBase{
 	HomePage home;
 	@Test(priority=1,description="validating userlogin with valid credentials",groups= {"smoke"})
 	public void verifyUserLoginWithValidCredentials() throws IOException

@@ -9,10 +9,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import automationcore.TextNGBase;
+import automationcore.TestNGBase;
 import utilities.ExtentReportUtility;
 
-public class Listeners extends TextNGBase implements ITestListener{
+public class Listeners extends TestNGBase implements ITestListener{
 	
 	ExtentTest test; 
  	ExtentReports extent = ExtentReportUtility.createExtentReports(); 
